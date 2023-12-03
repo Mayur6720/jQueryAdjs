@@ -1,0 +1,27 @@
+.box{
+    width:80%;
+    margin: 0 auto;
+    background-color: #7299bb;text-align: center;
+    padding: 1em ;
+}
+.logo{
+    color: rgba(14, 8, 125, 0.652);
+}
+.para{
+    font-size: 1em;
+    color: rgba(255, 255, 255);
+}
+.btn , .btn1{
+    scale: 1;
+    background-color: rgb(194, 184, 219);
+    color: rgb(8, 4, 65);
+    padding: 0.5em 1.5em;
+    text-transform: uppercase;
+}
+.box-color{
+    background-color:#354f52;
+    margin: 3em 3em;
+}
+.box-sizing{
+    margin: 3em 0 0 3em ;
+}

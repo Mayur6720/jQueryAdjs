@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VAlidation form </title>
+    <link rel="stylesheet" href="./validationform.css">
+    <!-- <script src="./validationform.js"></script> -->
+</head>
+<body>
+    <section>
+        <form onsubmit="return validationform()">
+            <div class="container">
+                <div class="row box">
+                     <div class="col-40">
+                        <label for="username">username</label>
+                        <label for="password">Password</label>
+                        <label for="mobileno">Mobile No.</label>
+                        <label for="emailid">Email Id</label>
+                    </div>
+                    
+                    <div class="col-40">
+                        <input type="username" name="#" id="username">
+                        <div><p id="usererror"></p></div>
+                        <input type="password" name="#" id="password">
+                        <div><p id="passerror"></p></div>
+                        <input type="tel" name="" id="mobileno">
+                        <div><p id="telerror"></p></div>
+                        <input type="email" name="#" id="emailid">
+                        <div><p id="emailerror"></p></div>
+                    </div>
+                </div>
+                <div>
+                    <input type="submit" value="Submit" id="submit">
+                </div>
+            </div>
+        </form>
+    </section>
+        
+
+    <script>
+        let username= document.getElementById("username")
+        let usererror= document.getElementById("usererror")
+        let emailid= document.getElementById("emailid")
+        let emailerror= document.getElementById("emailerror")
+        let password= document.getElementById("password")
+        let mobileno= document.getElementById("mobileno")
+        let telerror= document.getElementById("telerror")
+        let passerror= document.getElementById("passerror")
+        // console.log(username);
+        
+        
+        function validationform() {
+            // return false
+            event.preventDefault()
+
+            if (username.value == ""){
+                usererror.innerHTML= "Something went wrong"
+                event.preventDefault()
+            }
+            else if(username.value.length < 5){
+                usererror.innerHTML= "Shold be more than 5 character"
+                event.preventDefault()
+            }
+            else{
+                usererror.innerHTML=""
+            }
+
+            if(password.value == ""){
+                passerror.innerHTML ="Write your password"
+                event.preventDefault()
+            }
+            else if(password.value.length <=5 ){
+                passerror.innerHTML = "Do not be beyound limit"
+                event.preventDefault()
+            }
+            else{
+                passerror.innerHTML = ""
+            }
+            if(mobileno.value == ""){
+                telerror.innerHTML ="Write your Mobile No."
+                event.preventDefault()
+            }
+            else if(mobileno.value.length  < 10 ){
+                telerror.innerHTML = "Do not be beyound limit"
+                event.preventDefault()
+            }
+            else{
+                telerror.innerHTML = ""
+            }
+            if(emailid.value == ""){
+                emailerror.innerHTML = "Write your Email ID"
+                event.preventDefault()
+            }
+            else if(emailid.value.length <=5 ){
+                emailerror.innerHTML = "Do not be beyound limit"
+                event.preventDefault()
+            }
+            else{
+                emailerror.innerHTML = ""
+            }
+        }
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            width: 900px;
+            height: 500px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        img{
+            position: absolute;
+            /* transition: 2s; */
+        }
+        .buttons{
+            margin: 1em 1em ;
+            text-align: center;
+        }
+        button{
+            padding: 1em 1em;
+        }
+    </style>    
+</head>
+<body>
+
+
+    <div class="container">
+        <img class="img" src="https://picsum.photos/id/102/900/500" alt="">
+        <img class="img" src="https://picsum.photos/id/67/900/500" alt="">
+        <img class="img" src="https://picsum.photos/id/89/900/500" alt="">
+        <img class="img" src="https://picsum.photos/id/56/900/500" alt="">
+        <img class="img" src="https://picsum.photos/id/49/900/500" alt="">
+    </div>
+
+    <div class="buttons">
+        <button onclick="goprev()" >Previous</button>
+        <button onclick="gonext()">Next</button>
+    </div>
+    <script>
+
+
+    const slide = document.querySelectorAll('.img')
+        // console.log(sde);
+        let count = 0
+
+        slide.forEach(
+          (img,index) => {
+             img.style.left = `${index * 100}%`
+          }
+        )
+
+        const slideImage = () => {
+            slide.forEach(
+              (img) => {
+             img.style.transform = `translateX(-${count * 100}%)`
+          }
+        )
+        }
+
+        const goprev = () => {
+           count--  
+           if (count == -1) {
+            count = 4
+           } 
+           
+           slideImage()
+        }
+        const gonext = () => {
+           count++
+           if (count == 5){
+            count = 0
+           }
+           slideImage()
+        }
+
+    //     const SliderData = document.getElementsByClassName('img');
+    //         counter = 0
+    //         console.log(SliderData);
+    //         console.log(SliderData.length);
+
+    //  function Slider(){
+
+    //         for (let index = 0; index < SliderData.length; index++) {
+    //             // console.log(SliderData[index]);
+                
+    //             SliderData[index].style.display = "none"
+    //         }
+
+    //         if (counter >= SliderData.length) {
+    //        counter = 0;
+    //             }
+
+    //             console.log(counter);
+    //     SliderData[counter].style.display="block"
+    //    counter++;
+      
+    //     setTimeout(Slider, 2000);
+    //  }
+
+    //  Slider()
+    </script>
+</body>
+</html>
